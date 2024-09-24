@@ -7,17 +7,18 @@ class NotionClient
 
   # Method to retrieve event details
   def get_event_details(event_id)
-    @client.page.retrieve(event_id)
+    @client.page(page_id: event_id)
   end
 
-  # Method to update properties in Notion
+  def get_registration_details(registration_id)
+    @client.page(page_id: registration_id)
+  end
+
   def update_registration(registration_id, properties)
-    @client.page.update(registration_id, properties: properties)
+    @client.update_page(page_id: registration_id, properties: properties)
   end
 
   def update_event(event_id, properties)
-    @client.page.update(event_id, properties: properties)
+    @client.update_page(page_id: event_id, properties: properties)
   end
-
-  # Add more methods as needed
 end
