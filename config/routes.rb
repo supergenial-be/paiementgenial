@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  post '/webhooks/notion/new_registration', to: 'webhooks#new_registration'
+  post '/webhooks/stripe', to: 'webhooks#stripe'
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
