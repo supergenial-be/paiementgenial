@@ -23,5 +23,9 @@ module PaiementGenial
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    Notion.configure do |config|
+      config.token = ENV['NOTION_API_TOKEN']
+    end
   end
 end

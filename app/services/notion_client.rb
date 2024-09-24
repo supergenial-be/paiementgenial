@@ -2,7 +2,7 @@ require 'notion_ruby_client'
 
 class NotionClient
   def initialize
-    @client = NotionRubyClient::Client.new(token: ENV['NOTION_API_KEY'])
+    @client = Notion::Client.new(token: ENV['NOTION_API_KEY'])
   end
 
   # Method to retrieve event details
