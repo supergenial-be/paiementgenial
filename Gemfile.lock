@@ -73,7 +73,11 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
+    awesome_print (1.9.2)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bindex (0.8.1)
@@ -152,6 +156,15 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.25.1)
+    monetize (1.13.0)
+      money (~> 6.12)
+    money (6.19.0)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.15.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      railties (>= 3.0)
     msgpack (1.7.2)
     multipart-post (2.4.1)
     net-http (0.4.1)
@@ -286,6 +299,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.20.1)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.20.1)
+    sentry-ruby (5.20.1)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     sidekiq (7.3.2)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
@@ -313,6 +332,7 @@ GEM
     sqlite3 (2.0.4-x86_64-darwin)
     sqlite3 (2.0.4-x86_64-linux-gnu)
     sqlite3 (2.0.4-x86_64-linux-musl)
+    stackprof (0.2.26)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.1)
@@ -359,6 +379,8 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  annotate
+  awesome_print
   bootsnap
   brakeman
   byebug
@@ -367,6 +389,7 @@ DEPENDENCIES
   dotenv-rails
   importmap-rails
   jbuilder
+  money-rails
   notion-ruby-client
   pg (>= 0.18, < 2.0)
   postmark-rails
@@ -374,10 +397,13 @@ DEPENDENCIES
   rails (~> 7.2.1)
   rubocop-rails-omakase
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   sidekiq
   sidekiq-scheduler
   sprockets-rails
   sqlite3 (>= 1.4)
+  stackprof
   stimulus-rails
   stripe
   turbo-rails

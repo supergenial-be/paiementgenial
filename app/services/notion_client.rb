@@ -14,8 +14,8 @@ class NotionClient
     @client.page(page_id: registration_id)
   end
 
-  def update_registration(registration_id, properties)
-    @client.update_page(page_id: registration_id, properties: properties)
+  def update_registration(database_item_id, properties)
+    @client.update_page(page_id: database_item_id, properties: properties)
   end
 
   def update_event(event_id, properties)
